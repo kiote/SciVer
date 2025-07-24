@@ -126,14 +126,16 @@ We welcome contributions for:
 If you use our work and are inspired by our work, please consider cite us:
 
 ```
-@misc{wang2025sciver,
-      title={SciVer: Evaluating Foundation Models for Multimodal Scientific Claim Verification}, 
-      author={Chengye Wang and Yifei Shen and Zexi Kuang and Arman Cohan and Yilun Zhao},
-      year={2025},
-      eprint={2506.15569},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2506.15569}, 
+@inproceedings{wang-etal-2025-sciver,
+  title     = {SciVer: Evaluating Foundation Models for Multimodal Scientific Claim Verification},
+  author    = {Wang, Chengye and Shen, Yifei and Kuang, Zexi and Cohan, Arman and Zhao, Yilun},
+  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  year      = {2025},
+  month     = jul,
+  address   = {Vienna, Austria},
+  publisher = {Association for Computational Linguistics},
+  pages     = {8562--8579},
+  url       = {https://aclanthology.org/2025.acl-long.420/}
 }
 ```
 
