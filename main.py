@@ -3,7 +3,7 @@ import json
 import argparse
 import os
 import sys
-from utils.constant import COT_PROMPT
+from utils.constant import COT_PROMPT, DEFAULT_MODEL
 try:
     from transformers.utils import logging
     logging.set_verbosity_error()
@@ -15,9 +15,18 @@ def main(
     prompt: str, 
     queries: list, 
     output_path: str, 
-    n: int=1)-> None:
+    n: int=1,
+    thinking: str=None)-> None:
+    pi_options = {}
     if model_name.startswith("pi/"):
         from model_inference.pi_rpc import generate_response
+        pi_options["thinking"] = thinking
+    elif thinking is not None:
+        raise ValueError("--thinking applies only to pi/ models")
+    elif model_name.startswith("ollama/"):
+        from model_inference.ollama_chat import generate_response
+    elif model_name == "laya" or model_name.startswith("laya/"):
+        from model_inference.laya_text import generate_response
     elif "gpt" in model_name:
         from model_inference.azure_gpt import generate_response
     elif "gemini" in model_name:
@@ -30,15 +39,19 @@ def main(
                     prompt=prompt,
                     queries=queries, 
                     output_path=output_path,
-                    n = n)
+                    n = n,
+                    **pi_options)
         
 prompt_dict = {
     "cot": COT_PROMPT,
 }
 
-if __name__ == "__main__":
+def build_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, required=True)
+    parser.add_argument('--model', type=str, default=DEFAULT_MODEL,
+                        help=f"Model/backend (default: {DEFAULT_MODEL})")
+    parser.add_argument('--thinking', choices=('off', 'minimal', 'low', 'medium', 'high', 'xhigh', 'max'),
+                        default=None, help="Pi reasoning level: high for named models; session level for pi/current")
     parser.add_argument('--prompt', type=str, default="cot")
     parser.add_argument('--data_path', type=str, required=True)
     parser.add_argument('--output_dir', type=str, default="outputs")
@@ -47,7 +60,11 @@ if __name__ == "__main__":
     parser.add_argument("--n",type=int,default=1)
     parser.add_argument("--overwrite",action="store_true", default=False)
 
-    args = parser.parse_args()
+    return parser
+
+
+if __name__ == "__main__":
+    args = build_parser().parse_args()
     model_name = args.model
 
     try:
@@ -85,5 +102,6 @@ if __name__ == "__main__":
         model_name = args.model, 
         prompt = prompt, 
         queries = queries, 
-        output_path = output_path, 
-        n = args.n)
+        output_path = output_path,
+        n = args.n,
+        thinking = args.thinking)

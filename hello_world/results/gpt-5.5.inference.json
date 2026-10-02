@@ -1,0 +1,21 @@
+[
+    {
+        "claim_type": "direct",
+        "label": false,
+        "claim": "Model A reaches 80% accuracy.",
+        "paper_path": "hello_world/paper.json",
+        "section": [
+            "1.1"
+        ],
+        "type": "chart",
+        "item": "fig1",
+        "image_path": "hello_world/fig1.png",
+        "response": "The claim states that Model A reaches **80% accuracy**. However, the provided context and caption both state that Model A reaches or has **90% accuracy**, not 80%. The image itself does not visibly show a chart or data that would independently confirm 80%.\n\nBecause the supplied evidence indicates 90% accuracy and does not clearly support the specific claim of 80% accuracy, the claim is not fully supported.\n\nTherefore, the final answer is: Answer: no",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 1
+        }
+    }
+]

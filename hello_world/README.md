@@ -19,18 +19,33 @@ bash scripts/hello_pi.sh
 By default it runs with:
 
 ```bash
-pi/github-copilot/gpt-5.4
+pi/github-copilot/gpt-5.5
 ```
 
-You can override the model explicitly:
+Reasoning defaults to **high**. Both defaults come from `utils/constant.py`,
+not your current Pi session or personal Pi settings. The run checks Pi's selected
+model, image capability and reasoning level; it fails rather than silently using
+a different configuration.
+
+You can override both explicitly:
 
 ```bash
-bash scripts/hello_pi.sh pi/github-copilot/gpt-5.4
+bash scripts/hello_pi.sh pi/github-copilot/gpt-5.4 medium
 ```
+
+For any SciVer input file, omitting `--model` selects the same GPT-5.5/high default:
+
+```bash
+.venv/bin/python main.py --data_path hello_world/sample.json --max_num 1
+```
+
+Results include an `inference` object recording the selected provider, model,
+reasoning level and image count. The default hello-world snapshot is
+`hello_world/results/gpt-5.5.inference.json`.
 
 What it does:
 - creates/updates `.venv`
-- installs the minimal Python deps from `hello_world/requirements-pi-hello.txt`
+- installs the pinned minimal Python deps from `benchmarks/requirements.txt`
 - runs `main.py` on `hello_world/sample.json`
 - runs `acc_evaluation.py`
 - copies stable result snapshots into `hello_world/results/`
@@ -48,7 +63,47 @@ python3 main.py \
   --output_dir outputs
 ```
 
-## Option 2: test with the repo's other backends
+## Option 2: text-only hello world with local Laya
+
+```bash
+bash scripts/hello_laya.sh
+```
+
+By default this uses:
+
+```bash
+laya/typed-decisions
+```
+
+Notes:
+- this is a **text-only baseline**, not a true multimodal run
+- it expects `laya` to be installed in a Python environment
+- use `LAYA_PYTHON=/path/to/python-with-laya` to choose an installed environment;
+  otherwise it uses the active Python interpreter (no sibling-project dependencies)
+
+## Option 3: multimodal hello world with local Ollama
+
+```bash
+bash scripts/hello_ollama.sh
+```
+
+Default model:
+
+```bash
+ollama/qwen2.5vl:7b
+```
+
+You can also try a smaller variant:
+
+```bash
+bash scripts/hello_ollama.sh ollama/qwen2.5vl:3b
+```
+
+This uses Ollama's local multimodal chat API with image attachments. Laya and
+Ollama scripts are explicit alternative backends; they do not change the repo's
+GPT-5.5/high default.
+
+## Option 4: test with the repo's other backends
 
 Run with any configured supported model:
 
@@ -63,7 +118,7 @@ python main.py \
 
 This requires the corresponding API credentials or local model setup.
 
-## Option 3: evaluation-only smoke test
+## Option 5: evaluation-only smoke test
 
 ```bash
 bash hello_world/run_eval_only.sh

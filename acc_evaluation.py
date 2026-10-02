@@ -1,8 +1,26 @@
 import json
 import os
 import argparse
+import re
 
-from tqdm import tqdm
+
+def parse_verdict(response):
+    """Read an explicit final yes/no; never treat absence of 'yes' as 'no'."""
+    if not isinstance(response, str) or not response.strip():
+        return None
+    text = response.lower().replace("**", "").replace("`", "").replace("__", "")
+    # Prefer final-answer phrases over earlier instructions/quoted alternatives.
+    matches = re.findall(
+        r"\bfinal\s+answer\s*(?:is\s*)?[:=\-]?\s*(?:answer\s*:\s*)?[\"']?(yes|no)\b(?!\s*(?:/|or\b|and\b)\s*(?:yes|no)\b)",
+        text,
+    )
+    if not matches:
+        matches = re.findall(r"\banswer\s*:\s*[\"']?(yes|no)\b(?!\s*(?:/|or\b|and\b)\s*(?:yes|no)\b)", text)
+    if matches:
+        return matches[-1] == "yes"
+    standalone = re.fullmatch(r"\s*(yes|no)[.!]?\s*", text)
+    return (standalone.group(1) == "yes") if standalone else None
+
 
 def get_acc(examples):
     res = {
@@ -25,13 +43,10 @@ def get_acc(examples):
         label = item['label']
         numbers[claim_type] += 1
         numbers['total'] += 1
-        if item["response"]:
-            if label==True and 'yes' in item["response"].lower():
-                res[claim_type] += 1
-                res["total"] += 1
-            elif label==False and 'yes' not in item["response"].lower():
-                res[claim_type] += 1
-                res["total"] += 1
+        prediction = parse_verdict(item.get("response"))
+        if prediction is not None and prediction == label:
+            res[claim_type] += 1
+            res["total"] += 1
     for k, v in res.items():
         res[k] = (v / numbers[k]) if numbers[k] else None
     print(len(examples))

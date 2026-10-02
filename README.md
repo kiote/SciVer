@@ -1,5 +1,38 @@
 # SCIVER: A Benchmark for Multimodal Scientific Claim Verification
 
+## Fork quickstart: GPT-5.5 via Pi
+
+This fork adds a reproducible hello-world and a real 16-example mini-benchmark.
+The default is **`pi/github-copilot/gpt-5.5` with high reasoning**, configured once
+in `utils/constant.py`. It does not depend on Pi's personal default model.
+
+Prerequisites: Python 3.10+, Pi CLI installed and authenticated through
+`/login github-copilot`.
+
+```bash
+bash scripts/hello_pi.sh
+# Any dataset, with the same default model/reasoning:
+.venv/bin/python main.py --data_path path/to/examples.json --max_num 5
+# Explicit override (optional):
+.venv/bin/python main.py --data_path hello_world/sample.json \
+  --model pi/github-copilot/gpt-5.4 --thinking medium --max_num 1
+```
+
+Pi runs without tools, personal resources or prior conversation history. Each
+example checks the selected model, vision capability and reasoning level; a
+mismatch is an error, not a silent fallback. Results record the selected
+configuration. `--model pi/current` explicitly opts into the current Pi session
+model/reasoning instead. Other backends remain available through `--model`.
+
+- [Hello-world instructions and saved results](hello_world/README.md)
+- [Mini-benchmark method and reproducible commands](benchmarks/README.md)
+- [GPT high-reasoning comparison](benchmarks/results/gpt_high/SUMMARY.md)
+
+These mini-benchmark results are exploratory, not directly comparable to the
+full-benchmark scores in the upstream README below.
+
+---
+
 <p align="center">
   <a href="https://github.com/QDRhhhh/SciVer">🌐 Github</a> •
   <a href="https://arxiv.org/abs/2506.15569">📖 Paper</a> •

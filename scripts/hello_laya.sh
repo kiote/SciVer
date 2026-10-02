@@ -4,22 +4,15 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
-if ! command -v pi >/dev/null 2>&1; then
-  echo "error: pi CLI not found in PATH" >&2
-  exit 1
-fi
+MODEL="${1:-laya/typed-decisions}"
 
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --quiet --upgrade pip
-python -m pip install --quiet -r benchmarks/requirements.txt
-
-MODEL="${1:-$(python -c 'from utils.constant import DEFAULT_MODEL; print(DEFAULT_MODEL)')}"
-THINKING="${2:-$(python -c 'from utils.constant import DEFAULT_PI_THINKING; print(DEFAULT_PI_THINKING)')}"
+python -m pip install --quiet -r hello_world/requirements-pi-hello.txt
 
 python main.py \
   --model "$MODEL" \
-  --thinking "$THINKING" \
   --data_path hello_world/sample.json \
   --max_num 1 \
   --prompt cot \
@@ -37,6 +30,6 @@ cp "$OUTPUT_JSON" "$SNAPSHOT_DIR/${OUTPUT_BASENAME}.inference.json"
 cp "$EVAL_JSON" "$SNAPSHOT_DIR/${OUTPUT_BASENAME}.eval.json"
 
 echo
-echo "Hello-world inference written to: $OUTPUT_JSON"
+echo "Laya hello-world inference written to: $OUTPUT_JSON"
 echo "Evaluation written to: $EVAL_JSON"
 echo "Committed snapshots updated in: $SNAPSHOT_DIR/"

@@ -1,3 +1,1 @@
-tqdm
-requests
-pillow
+-r ../benchmarks/requirements.txt

@@ -1,0 +1,137 @@
+[
+  {
+    "model": "pi/github-copilot/gpt-5.5",
+    "thinking": "high",
+    "direct": {
+      "correct": 4,
+      "n": 4,
+      "accuracy": 1.0,
+      "invalid": 0,
+      "errors": 0
+    },
+    "parallel": {
+      "correct": 4,
+      "n": 4,
+      "accuracy": 1.0,
+      "invalid": 0,
+      "errors": 0
+    },
+    "sequential": {
+      "correct": 3,
+      "n": 4,
+      "accuracy": 0.75,
+      "invalid": 0,
+      "errors": 0
+    },
+    "analytical": {
+      "correct": 3,
+      "n": 4,
+      "accuracy": 0.75,
+      "invalid": 0,
+      "errors": 0
+    },
+    "total": {
+      "correct": 14,
+      "n": 16,
+      "accuracy": 0.875,
+      "invalid": 0,
+      "errors": 0
+    },
+    "latency": {
+      "median_wall_seconds": 9.0175,
+      "mean_wall_seconds": 15.153,
+      "total_wall_seconds": 242.448
+    },
+    "legacy_correct": 14
+  },
+  {
+    "model": "ollama/qwen2.5vl:3b",
+    "thinking": null,
+    "direct": {
+      "correct": 3,
+      "n": 4,
+      "accuracy": 0.75,
+      "invalid": 0,
+      "errors": 0
+    },
+    "parallel": {
+      "correct": 1,
+      "n": 4,
+      "accuracy": 0.25,
+      "invalid": 0,
+      "errors": 0
+    },
+    "sequential": {
+      "correct": 3,
+      "n": 4,
+      "accuracy": 0.75,
+      "invalid": 0,
+      "errors": 0
+    },
+    "analytical": {
+      "correct": 2,
+      "n": 4,
+      "accuracy": 0.5,
+      "invalid": 0,
+      "errors": 0
+    },
+    "total": {
+      "correct": 9,
+      "n": 16,
+      "accuracy": 0.5625,
+      "invalid": 0,
+      "errors": 0
+    },
+    "latency": {
+      "median_wall_seconds": 6.973000000000001,
+      "mean_wall_seconds": 8.7129375,
+      "total_wall_seconds": 139.407
+    },
+    "legacy_correct": 9
+  },
+  {
+    "model": "ollama/qwen2.5vl:7b",
+    "thinking": null,
+    "direct": {
+      "correct": 3,
+      "n": 4,
+      "accuracy": 0.75,
+      "invalid": 0,
+      "errors": 0
+    },
+    "parallel": {
+      "correct": 2,
+      "n": 4,
+      "accuracy": 0.5,
+      "invalid": 0,
+      "errors": 0
+    },
+    "sequential": {
+      "correct": 2,
+      "n": 4,
+      "accuracy": 0.5,
+      "invalid": 0,
+      "errors": 0
+    },
+    "analytical": {
+      "correct": 2,
+      "n": 4,
+      "accuracy": 0.5,
+      "invalid": 0,
+      "errors": 0
+    },
+    "total": {
+      "correct": 9,
+      "n": 16,
+      "accuracy": 0.5625,
+      "invalid": 0,
+      "errors": 0
+    },
+    "latency": {
+      "median_wall_seconds": 10.518,
+      "mean_wall_seconds": 11.996625,
+      "total_wall_seconds": 191.946
+    },
+    "legacy_correct": 9
+  }
+]

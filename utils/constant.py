@@ -1,5 +1,9 @@
 from string import Template
 
+# Repository defaults, independent of Pi's personal/global settings.
+DEFAULT_MODEL = "pi/github-copilot/gpt-5.5"
+DEFAULT_PI_THINKING = "high"
+
 MAX_TOKENS = 10240
 GENERATION_TEMPERATURE = 1.0
 GENERATION_SEED = 215

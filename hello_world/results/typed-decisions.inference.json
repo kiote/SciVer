@@ -1,0 +1,48 @@
+[
+    {
+        "claim_type": "direct",
+        "label": false,
+        "claim": "Model A reaches 80% accuracy.",
+        "paper_path": "hello_world/paper.json",
+        "section": [
+            "1.1"
+        ],
+        "type": "chart",
+        "item": "fig1",
+        "image_path": "hello_world/fig1.png",
+        "response": "Laya text-only baseline confidence: 0.0124.\nTherefore, the final answer is: Answer: yes",
+        "laya_raw": {
+            "model": "laya-rl-agent",
+            "answers": {
+                "answer": {
+                    "type": "choice",
+                    "choice": "yes",
+                    "probabilities": {
+                        "yes": 0.5655,
+                        "no": 0.4345
+                    },
+                    "confidence": 0.0124,
+                    "answer_confidence": 0.5655,
+                    "action": {
+                        "act_probability": 1.0
+                    }
+                }
+            },
+            "usage": {
+                "input_tokens": 138,
+                "output_tokens": 0,
+                "state_tokens": 72,
+                "state_tokens_dropped": 0,
+                "truncated": false,
+                "truncated_questions": []
+            },
+            "routing": {
+                "model": "typed-decisions",
+                "repo": "convaiinnovations/laya/typed-decisions",
+                "reason": "explicit model='typed-decisions'",
+                "detection": null,
+                "workflow": null
+            }
+        }
+    }
+]

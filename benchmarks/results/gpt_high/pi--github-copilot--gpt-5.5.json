@@ -1,0 +1,485 @@
+{
+  "config": {
+    "model": "pi/github-copilot/gpt-5.5",
+    "dataset_revision": "5695ac384d247ae5df2a7b73568dc63d189296b0",
+    "manifest_sha256": "f8a72ed2c42bfadd8399fd03a95482e7d4feb42b8912a0a015ae547e50539b9a",
+    "inputs": [
+      {
+        "sample_id": "test-0561",
+        "prompt_sha256": "b8b51ece943823545ab75540c6ecfbce5cb2b2c32a795cce065d772b52430075",
+        "image_sha256": [
+          "9400b426cd0b46d614d249cccdbe2f716087fea16d61a37b67acc68522c5162f"
+        ]
+      },
+      {
+        "sample_id": "test-0577",
+        "prompt_sha256": "aa01de5f15dc7242bb049bbb6bd37b50206ac3ca68b4d1c110a2f7c014b90c6c",
+        "image_sha256": [
+          "bbd9f26a3e544de20d661b2ac50aedf97becdeda28225ba0ecd5ebc02383a0a6"
+        ]
+      },
+      {
+        "sample_id": "test-0965",
+        "prompt_sha256": "a447b712b416aaa509d573a900af8cedb319e3520e172efaff357a20caa21fd5",
+        "image_sha256": [
+          "95a50c05d6a2703e79b5ea51694afb57060b0a41eb19f5bb12a1f4568f720af1"
+        ]
+      },
+      {
+        "sample_id": "test-0951",
+        "prompt_sha256": "e718059ff8ee24cb6478a3ca7ed1e957baf89a4e10e708c4f947f9ddca874efe",
+        "image_sha256": [
+          "04ea5469b79f3419e01d0c9e0ea51fc8bf62b1af9ed4659768a19a0013d836fe"
+        ]
+      },
+      {
+        "sample_id": "test-1080",
+        "prompt_sha256": "b2833696883d5f2451d0abe30e8bc2df31e0f35995c1117666fc8284438b3b7f",
+        "image_sha256": [
+          "77c27e437cc21473ab8bd81a0e74e1a058e510eb2df675ca1836485173c8fa8c",
+          "4667782a02f007dbced9e142cb10bdc8046d85959aba518f9cc912e32c5f1762"
+        ]
+      },
+      {
+        "sample_id": "test-1067",
+        "prompt_sha256": "a4eb37ecf6c07eef22751d7bd49a294010bf453a703da94a233994d6b3839349",
+        "image_sha256": [
+          "480e620438efab4505dc265a8a3c8864ec31ab9e23a0c92a449a997648edc405",
+          "73f40d5525e3887f16fe2d5d521de4865221c356218d7d79a739f20fd77d70f4"
+        ]
+      },
+      {
+        "sample_id": "test-1346",
+        "prompt_sha256": "dd76f91e1fb8374e3ebbee72f0f82971f1766ddbdce5eed1734b19c9a31c75ad",
+        "image_sha256": [
+          "9edcf31d21c3a746b1a3f1630068e1b6c9610b442c000065d064b6190b255130",
+          "86a3181cde72b572e844887e3fbffd41013b2b2721d67c9bbfb23204cdb0f53a"
+        ]
+      },
+      {
+        "sample_id": "test-1411",
+        "prompt_sha256": "deaaba2522ea15e0138739566ef81315d2d8a8c6623a7de3a2ec50f1f3198bcd",
+        "image_sha256": [
+          "a9b231cd598d0d96f092e6b24c6a3b0b0eee4f184f890933eb10c0b21a2e0000",
+          "12a9051a137f18d2c64e514f5bbe8611a903c94e2c2086c7837623f428183505"
+        ]
+      },
+      {
+        "sample_id": "test-1684",
+        "prompt_sha256": "428c3351a65fc454a298c6b2aade22765d18b40366076f521897daba56cf1408",
+        "image_sha256": [
+          "1752c8e864f31deb2c67b29f2012587762d319faee4543ef7e50ee01c1afd20a",
+          "4b9ebab102d61339c06cad01bf527ecea6b0084a84187581a6e026e462fcf9f9"
+        ]
+      },
+      {
+        "sample_id": "test-1593",
+        "prompt_sha256": "08c1e455df109f38ccaaaabeb7aaf4fb137874587b6e0901282a80afdf7e254b",
+        "image_sha256": [
+          "524998166424fda632f1a3e95bbbdb0f48c74dd600cdbd8ade561d59794fa45b",
+          "a8fa9ec1fc739110be325094f13982f34865e61c34f080608f2ff4431a217d65"
+        ]
+      },
+      {
+        "sample_id": "test-1882",
+        "prompt_sha256": "7045921b72d533f22711b5253c46f764dc7ed7677be2c6ef351237465c37c233",
+        "image_sha256": [
+          "2628e520a70b42557a06ddee9bc1cbee9c2ef6154d6b9b38da860c2934e8b89a",
+          "bf3c62609bcea6b357924ab24d118980c8c9926a84131ff94239119cce2c785e"
+        ]
+      },
+      {
+        "sample_id": "test-1898",
+        "prompt_sha256": "172c9f18ecd1eec4b5740d3217e14b7517e70e98b312cc4142e8a00c4426d6a5",
+        "image_sha256": [
+          "4a817e73a3de4548237d05db75a4082544cfba6462ff720407f28564cea2cbaa",
+          "fdfe01ded5b46713c51ed1e3d1f02dca62901bb9898f4dada696de2e66b282bb"
+        ]
+      },
+      {
+        "sample_id": "test-0157",
+        "prompt_sha256": "a127408293d5b40ad0433f6cff4b5ba15d33898ff80a40a53df1a9b5f2ed4045",
+        "image_sha256": [
+          "81b6cabc4a456bb85d1ccbe80ca599f4d1cac9acd0bdcd2d6a868eb283a0c659"
+        ]
+      },
+      {
+        "sample_id": "test-0160",
+        "prompt_sha256": "cee84b56295815a63590e610a7acd48281ebbad6f6636dcdaed029eb207226be",
+        "image_sha256": [
+          "2b2c2154fd71ae3768dfa0a375e37275ceb2dbe97ee0c0748471721ac2f9161d"
+        ]
+      },
+      {
+        "sample_id": "test-0364",
+        "prompt_sha256": "28a07ad25dee9a83f33b73da74a8249368f9c52c3f839e31502535495dda4b6c",
+        "image_sha256": [
+          "2895c7bab9b75d27d199ab13f658115f56aa4cc3c0cd94daf397f760eafd2664"
+        ]
+      },
+      {
+        "sample_id": "test-0309",
+        "prompt_sha256": "6fe4a755ef0641a5c0b43194f7f549bd7fa2147546a96cfda68f8bdae0e5e853",
+        "image_sha256": [
+          "2d421a7432461ebd5f37271348df20261a571e29c71fef4b5a10168a1770e7f8"
+        ]
+      }
+    ],
+    "system_prompt_sha256": "07206086321e51952d67e3e24df8d03333a4509097797bc4c6c0bf2ea892498d",
+    "thinking": "high",
+    "ollama_options": null
+  },
+  "runtime": {
+    "python": "3.14.3",
+    "packages": {
+      "Pillow": "12.3.0",
+      "requests": "2.34.2",
+      "tqdm": "4.70.1"
+    },
+    "effective_thinking": "high",
+    "pi_version": "1.0.0",
+    "model": {
+      "id": "gpt-5.5",
+      "provider": "github-copilot",
+      "api": "openai-responses",
+      "input": [
+        "text",
+        "image"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "sample_id": "test-0561",
+      "claim_type": "direct",
+      "label": true,
+      "response": "The table caption identifies it as “Major operator bases in transformer workflow.” In the image, the computation side lists seven items: GEMM, FlashAttention, Group-GEMM, Fused BDA, Layernorm, Router, and Permute. The communication side lists four items: AllGather, ReduceScatter, AlltoAll, and Send/Recv. Thus, the table does list 7 computation operators versus 4 communication operators, and 7 is close to twice 4.\n\nTherefore, the final answer is: Answer: yes",
+      "prediction": true,
+      "image_count": 1,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 3242,
+        "output": 434,
+        "cacheRead": 0,
+        "totalTokens": 3676
+      },
+      "wall_seconds": 7.535
+    },
+    {
+      "sample_id": "test-0577",
+      "claim_type": "direct",
+      "label": true,
+      "response": "In Figure 4(b) for the Attention-Fool attack, the CIFAR-10 bars show:\n\n- Without detection (“w/o Det.”): 46.9% fooling rate\n- ViTGuard: 0.5% fooling rate\n\nThe decrease is \\(46.9 - 0.5 = 46.4\\) percentage points. The caption confirms that “w/o Det.” represents attacks’ fooling rates without any detection. Thus, the claim is directly supported by the figure.\n\nTherefore, the final answer is: Answer: yes",
+      "prediction": true,
+      "image_count": 1,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 5618,
+        "output": 320,
+        "cacheRead": 0,
+        "totalTokens": 5938
+      },
+      "wall_seconds": 6.661
+    },
+    {
+      "sample_id": "test-0965",
+      "claim_type": "direct",
+      "label": false,
+      "response": "In the SALT spectrum (MJD 59616) panel of Figure 5, the [O III] λ5007 emission line near 5007 Å is the tallest feature, peaking at roughly \\(8 \\times 10^{-16}\\) erg cm\\(^{-2}\\) s\\(^{-1}\\) Å\\(^{-1}\\). The broad Hβ component, shown as the blue dashed curve around 4861 Å, peaks much lower, around \\(2.5\\)–\\(3 \\times 10^{-16}\\) in the same units. The total Hβ-region model peak is higher due to multiple components, but the broad Hβ component alone is not near \\(4.2 \\times 10^{-16}\\), and it is clearly not comparable to the [O III] λ5007 peak.\n\nThus, the claim that the [O III] λ5007 peak flux is ~\\(4 \\times 10^{-16}\\) and nearly equal to the broad Hβ component is contradicted by the plotted spectrum.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 1,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 3620,
+        "output": 745,
+        "cacheRead": 0,
+        "totalTokens": 4365
+      },
+      "wall_seconds": 9.593
+    },
+    {
+      "sample_id": "test-0951",
+      "claim_type": "direct",
+      "label": false,
+      "response": "The claim is not supported by the figure and caption.\n\n- The dotted mean lines show **FCFS** (red) at about **17–18 s** and **ALISE** (blue) at about **9 s**, not the other way around. The claim reverses these means by saying ALISE is ≈18s and FCFS is ≈9s.\n- This also contradicts the accompanying text, which states that ALISE achieves about a **46% reduction** in mean response latency compared with FCFS.\n- The maximum FCFS latency does appear to peak around **53 s**, but ALISE’s maximum does **not** clearly peak near **27 s**; there are blue bars reaching closer to **40 s**.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 1,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 3555,
+        "output": 640,
+        "cacheRead": 0,
+        "totalTokens": 4195
+      },
+      "wall_seconds": 9.438
+    },
+    {
+      "sample_id": "test-1080",
+      "claim_type": "parallel",
+      "label": true,
+      "response": "Table 6 explicitly reports the supervised referee model’s overall F1 as 0.936. Figure 9 shows GPT-4’s F1 on MMDA at about 0.75. The difference is:\n\n0.936 − 0.750 = 0.186, i.e., 18.6 percentage points.\n\nTherefore, the final answer is: Answer: yes",
+      "prediction": true,
+      "image_count": 2,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 7825,
+        "output": 3189,
+        "cacheRead": 0,
+        "totalTokens": 11014
+      },
+      "wall_seconds": 29.769
+    },
+    {
+      "sample_id": "test-1067",
+      "claim_type": "parallel",
+      "label": true,
+      "response": "Figure 7 shows the Top-2 recall value as 76.69%, so the claim’s first numeric statement is supported.\n\nFigure 8 shows the precision at Top-3 as 74.24%, so the second numeric statement is also supported.\n\nThe difference is 76.69 − 74.24 = 2.45 percentage points, matching the claim.\n\nTherefore, the final answer is: Answer: yes",
+      "prediction": true,
+      "image_count": 2,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 4161,
+        "output": 585,
+        "cacheRead": 0,
+        "totalTokens": 4746
+      },
+      "wall_seconds": 7.157
+    },
+    {
+      "sample_id": "test-1346",
+      "claim_type": "parallel",
+      "label": false,
+      "response": "Figure 6 shows the KD [ST] {(128,64)} configuration at the 30-min horizon with an RMSE around the mid-5 range, but it is not clearly “about 5.3” from the plot.\n\nMore importantly, Table 3 does not report 6.88 RMSE for the 2020 dataset and the GlucoNet+KD configuration. The 2020 GlucoNet+KD row shows a 30-min RMSE of **7.88**, not 6.88. Thus the stated “roughly 1.6 lower” comparison is also incorrect.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 2,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 4185,
+        "output": 656,
+        "cacheRead": 0,
+        "totalTokens": 4841
+      },
+      "wall_seconds": 7.663
+    },
+    {
+      "sample_id": "test-1411",
+      "claim_type": "parallel",
+      "label": false,
+      "response": "The claim is not fully supported.\n\n- The evidence does support that RoPO uses an orthogonal rotational update and an additional trainable magnitude-scaling vector, shown as \\(m^{1\\times n}\\), to help preserve hyperspherical energy/relative neuron structure.\n- However, the claim says RoPO uses a “2×n rotation,” which is not clearly stated. The text describes Givens rotations in 2-dimensional subspaces and orthogonal/BIG matrices, while Figure 4 shows an orthogonal matrix of size \\(d \\times d\\), not a “2×n rotation.”\n- The claim also says the BIG matrix uses “just two sparse multiplications.” But the provided context explicitly states that the BIG arrangement “only requires four sparse matrix multiplications” to obtain full-angle coverage. This contradicts the claim.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 2,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 2004,
+        "output": 1671,
+        "cacheRead": 0,
+        "totalTokens": 3675
+      },
+      "wall_seconds": 15.525
+    },
+    {
+      "sample_id": "test-1684",
+      "claim_type": "sequential",
+      "label": true,
+      "response": "Table 1 lists the Pearson split-half reliability as **SHR(r) = 0.89**, and the context explicitly says this indicates high reliability of the real-valued scores.\n\nIn Table 2, the row for **5 bins** shows **Random SHCMP = 20.0** and **WorryWords SHCMP = 0.78**. Interpreting SHCMP as a proportion for WorryWords, **0.78 = 78%**, which is well above the **20%** random baseline. The context also states that actual SHCMP scores are markedly higher than random annotations.\n\nTherefore, the final answer is: Answer: yes",
+      "prediction": true,
+      "image_count": 2,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 2026,
+        "output": 3764,
+        "cacheRead": 0,
+        "totalTokens": 5790
+      },
+      "wall_seconds": 48.082
+    },
+    {
+      "sample_id": "test-1593",
+      "claim_type": "sequential",
+      "label": true,
+      "response": "The λ values cited from the figures are correct:\n\n- Fig. 5 (2H): ZrSH has λ = 2.68 and ZrSeH has λ = 1.48, so λ decreases from S to Se.\n- Fig. 6 (1T): ZrSeH has λ = 2.44 and ZrTeH has λ = 1.18, so λ decreases from Se to Te.\n\nHowever, the broader conclusion is not fully supported. The evidence does not show a complete S→Se→Te sequence for ZrMXH within either phase:\n\n- 2H-ZrTeH is stated to be dynamically unstable and is not included in Fig. 5.\n- 1T-ZrSH is stated to be dynamically unstable and is not included in Fig. 6.\n\nThus, the figures support partial decreases in each phase, but not a complete consistent decrease from S→Se→Te across both phases for ZrMXH.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 2,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 9998,
+        "output": 1770,
+        "cacheRead": 0,
+        "totalTokens": 11768
+      },
+      "wall_seconds": 17.418
+    },
+    {
+      "sample_id": "test-1882",
+      "claim_type": "sequential",
+      "label": false,
+      "response": "Fig. 4a does not show the gradient sum peaking at layer 3; the gradient curve is highest at layer 0 and generally declines afterward. Fig. 4b does show that MSE loss reduces changes more strongly in low-level layers, but the claim’s stated motivation from a layer-3 peak is incorrect. Also, Fig. 5 shows CLIPFit (Fig. 5b), not zero-shot CLIP (Fig. 5a), having clearer class separation; the claim reverses this comparison.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 2,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 6441,
+        "output": 613,
+        "cacheRead": 0,
+        "totalTokens": 7054
+      },
+      "wall_seconds": 8.58
+    },
+    {
+      "sample_id": "test-1898",
+      "claim_type": "sequential",
+      "label": false,
+      "response": "Figure 7’s Organizational Behavior panel shows Mistral-7B as the last light-orange bar, which is around 45%, not about 60%. The ~60% bar appears to correspond to Mistral-8x7B, not Mistral-7B.\n\nFigure 9’s heatmap shows Mistral-7B in the “Org.” column at 36%, not 26%. This is not a low inconsistency rate relative to many other models and does not support the claimed interpretation.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 2,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 4496,
+        "output": 638,
+        "cacheRead": 0,
+        "totalTokens": 5134
+      },
+      "wall_seconds": 9.651
+    },
+    {
+      "sample_id": "test-0157",
+      "claim_type": "analytical",
+      "label": true,
+      "response": "The table is a 4×4 payoff table for the class extension of the standard Prisoner’s Dilemma, with ✗ marking non-equilibria. Counting the non-✗ entries gives eight pure Nash equilibria. The largest payoff shown is \\((2\\frac{1}{2}, 2\\frac{1}{2}) = (2.5, 2.5)\\), occurring at the symmetric off-diagonal profiles \\((2,3)\\) and \\((3,2)\\). The surrounding text also states that these maximum-payoff profiles are obtained at the upper limit of the entanglement parameter, \\(\\gamma = 1\\). The table is symmetric in these equilibrium payoffs, supporting the symmetry aspect of the claim.\n\nTherefore, the final answer is: Answer: yes",
+      "prediction": true,
+      "image_count": 1,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 5327,
+        "output": 3796,
+        "cacheRead": 0,
+        "totalTokens": 9123
+      },
+      "wall_seconds": 41.485
+    },
+    {
+      "sample_id": "test-0160",
+      "claim_type": "analytical",
+      "label": true,
+      "response": "Step-by-step evaluation:\n\n1. The figure plots G-Ref performance versus negative image pool size \\(K\\), with red representing mIoU.\n2. In the G-Ref subplot, the highest red point is labeled **61.36**.\n3. That labeled peak aligns with **\\(K = 200\\)**, not \\(K = 400\\).\n4. The surrounding text also explicitly states: “the optimal \\(K\\) values differ significantly by the datasets: **200 for G-Ref** and 800 for RefCOCO.”\n5. The broader interpretation that a moderate pool size is beneficial is supported, but the claim’s specific statement that **\\(K=400\\)** achieves the highest mIoU of 61.36 is incorrect.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 1,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 2554,
+        "output": 688,
+        "cacheRead": 0,
+        "totalTokens": 3242
+      },
+      "wall_seconds": 6.988
+    },
+    {
+      "sample_id": "test-0364",
+      "claim_type": "analytical",
+      "label": false,
+      "response": "The table shows the opposite of the claim’s numerical comparison:\n\n1. **GCNII**: The rightmost “Avg. % Improv.” column reports **↑ 2.70%** for GCNII-AS.\n2. **ACM-GCN**: The rightmost column reports **↑ 6.04%** for ACM-GCN-AS.\n\nSo AS boosts average performance by **6.04% on ACM-GCN**, not GCNII, and by **2.70% on GCNII**, not ACM-GCN.\n\nThe provided text also contradicts the interpretation in the claim: it states that **GCNII has initial residual connections and identity mapping**, producing more similar representations and reduced overfitting, which **limits AS’s impact**. Conversely, **ACM-GCN has more diverse representations and is more prone to overfitting**, so AS helps more there.\n\nTherefore, the claim reverses both the reported improvements and the explanatory conclusion.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 1,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 3828,
+        "output": 730,
+        "cacheRead": 0,
+        "totalTokens": 4558
+      },
+      "wall_seconds": 8.597
+    },
+    {
+      "sample_id": "test-0309",
+      "claim_type": "analytical",
+      "label": false,
+      "response": "Step-by-step evaluation:\n\n1. **Confidence band stated in the figure/caption:** The legend labels the shaded region as a **95% Confidence Band**, not an 80% confidence band. The caption also explicitly refers to a **95% confidence band**.\n\n2. **Location of Davinci-002 and Amplified points:** The plotted Davinci-002 and Amplified markers appear to lie **within** the shaded confidence band, not outside it.\n\n3. **Interpretation in the caption:** The caption says that for the datasets to pass the Similarity of Difficulty test, **no points should lie outside the 95% confidence band**, indicating similar performance on both datasets for uninfluenced models.\n\n4. **Claim about significant performance gap:** The claim says the figure reveals a significant performance gap between Retro-Misconceptions and TruthfulQA. This is not supported; the figure and caption instead support the opposite interpretation: performance is similar enough to pass the test.\n\nTherefore, the final answer is: Answer: no",
+      "prediction": false,
+      "image_count": 1,
+      "error": null,
+      "stop_reason": "stop",
+      "effective_thinking": "high",
+      "usage": {
+        "input": 3017,
+        "output": 728,
+        "cacheRead": 0,
+        "totalTokens": 3745
+      },
+      "wall_seconds": 8.306
+    }
+  ],
+  "scores": {
+    "direct": {
+      "correct": 4,
+      "n": 4,
+      "accuracy": 1.0,
+      "invalid": 0,
+      "errors": 0
+    },
+    "parallel": {
+      "correct": 4,
+      "n": 4,
+      "accuracy": 1.0,
+      "invalid": 0,
+      "errors": 0
+    },
+    "sequential": {
+      "correct": 3,
+      "n": 4,
+      "accuracy": 0.75,
+      "invalid": 0,
+      "errors": 0
+    },
+    "analytical": {
+      "correct": 3,
+      "n": 4,
+      "accuracy": 0.75,
+      "invalid": 0,
+      "errors": 0
+    },
+    "total": {
+      "correct": 14,
+      "n": 16,
+      "accuracy": 0.875,
+      "invalid": 0,
+      "errors": 0
+    },
+    "latency": {
+      "median_wall_seconds": 9.0175,
+      "mean_wall_seconds": 15.153,
+      "total_wall_seconds": 242.448
+    },
+    "legacy_correct": 14
+  },
+  "complete": true
+}

@@ -3,3 +3,8 @@ __pycache__/
 *.py[cod]
 outputs/
 processed_outputs/
+data/
+.env
+.env.*
+*.log
+benchmarks/results/*.partial.json
