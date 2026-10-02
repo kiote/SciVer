@@ -1,0 +1,177 @@
+[
+    {
+        "sample_id": "attention-direct-1",
+        "claim_type": "direct",
+        "label": true,
+        "claim": "Table 2 reports a BLEU score of 28.4 for Transformer (big) on the English-to-German newstest2014 test.",
+        "type": "table",
+        "item": "2",
+        "section": [
+            "6.1"
+        ],
+        "image_path": "data/attention_is_all_you_need/table2.png",
+        "paper_path": "data/attention_is_all_you_need/paper.json",
+        "response": "The table caption states that Table 2 reports BLEU scores on the English-to-German and English-to-French newstest2014 tests. In the table, the row “Transformer (big)” has a BLEU value of **28.4** under the **EN-DE** column, which corresponds to English-to-German. This directly supports the claim, with no contradiction in the provided evidence.\n\nTherefore, the final answer is: Answer: yes",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 1
+        }
+    },
+    {
+        "sample_id": "attention-direct-2",
+        "claim_type": "direct",
+        "label": false,
+        "claim": "Table 3 lists N = 12 for the base Transformer configuration.",
+        "type": "table",
+        "item": "3",
+        "section": [
+            "6.2"
+        ],
+        "image_path": "data/attention_is_all_you_need/table3.png",
+        "paper_path": "data/attention_is_all_you_need/paper.json",
+        "response": "The claim says that Table 3 lists **N = 12** for the **base Transformer configuration**. However, in the image of Table 3, the **base** row clearly lists **N = 6**. The caption also states that unlisted values match the base configuration, but the base value for **N** is explicitly shown as 6, not 12.\n\nTherefore, the final answer is: Answer: no",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 1
+        }
+    },
+    {
+        "sample_id": "attention-parallel-1",
+        "claim_type": "parallel",
+        "label": true,
+        "claim": "Table 1 lists O(n) sequential operations for recurrent layers, while Table 2 reports 27.3 English-to-German BLEU for Transformer (base model).",
+        "item1_type": "table",
+        "item1": "1",
+        "item1_path": "data/attention_is_all_you_need/table1.png",
+        "item2_type": "table",
+        "item2": "2",
+        "item2_path": "data/attention_is_all_you_need/table2.png",
+        "section": [
+            "4",
+            "6.1"
+        ],
+        "paper_path": "data/attention_is_all_you_need/paper.json",
+        "response": "Table 1’s row for “Recurrent” shows the “Sequential Operations” entry as \\(O(n)\\). Table 2’s row for “Transformer (base model)” shows the English-to-German (EN-DE) BLEU score as 27.3. Both parts of the claim are explicitly supported by the provided tables.\n\nTherefore, the final answer is: Answer: yes",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 2
+        }
+    },
+    {
+        "sample_id": "attention-parallel-2",
+        "claim_type": "parallel",
+        "label": false,
+        "claim": "Table 2 and the prose in Section 6.1 report the same numerical English-to-French BLEU score for the big Transformer model.",
+        "item1_type": "table",
+        "item1": "2",
+        "item1_path": "data/attention_is_all_you_need/table2.png",
+        "item2_type": "chart",
+        "item2": "section6.1",
+        "item2_path": "data/attention_is_all_you_need/section6_1.png",
+        "section": [
+            "6.1"
+        ],
+        "paper_path": "data/attention_is_all_you_need/paper.json",
+        "response": "Table 2 lists the Transformer (big) model’s English-to-French BLEU score as **41.8**.  \n\nThe prose in Section 6.1 states: “our big model achieves a BLEU score of **41.0**” for English-to-French.  \n\nThese are different numerical values, so the claim that they report the same score is not supported. Therefore, the final answer is: Answer: no",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 2
+        }
+    },
+    {
+        "sample_id": "attention-sequential-1",
+        "claim_type": "sequential",
+        "label": true,
+        "claim": "Using the base/big training-cost entries printed in Table 2 and their parameter counts in Table 3, dividing FLOPs by parameter count gives roughly 2.1 times as many training FLOPs per parameter for big as for base.",
+        "item1_type": "table",
+        "item1": "2",
+        "item1_path": "data/attention_is_all_you_need/table2.png",
+        "item2_type": "table",
+        "item2": "3",
+        "item2_path": "data/attention_is_all_you_need/table3.png",
+        "section": [
+            "6.1",
+            "6.2"
+        ],
+        "paper_path": "data/attention_is_all_you_need/paper.json",
+        "response": "Table 2 lists Transformer training costs as:\n\n- Base: \\(3.3 \\times 10^{18}\\) FLOPs  \n- Big: \\(2.3 \\times 10^{19}\\) FLOPs  \n\nTable 3 lists parameter counts as:\n\n- Base: \\(65 \\times 10^6\\) parameters  \n- Big: \\(213 \\times 10^6\\) parameters  \n\nTraining FLOPs per parameter:\n\n- Base: \\(\\frac{3.3 \\times 10^{18}}{65 \\times 10^6} \\approx 5.08 \\times 10^{10}\\)\n- Big: \\(\\frac{2.3 \\times 10^{19}}{213 \\times 10^6} \\approx 1.08 \\times 10^{11}\\)\n\nRatio:\n\n\\[\n\\frac{1.08 \\times 10^{11}}{5.08 \\times 10^{10}} \\approx 2.13\n\\]\n\nThis is roughly 2.1 times as many training FLOPs per parameter for big as for base.\n\nTherefore, the final answer is: Answer: yes",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 2
+        }
+    },
+    {
+        "sample_id": "attention-sequential-2",
+        "claim_type": "sequential",
+        "label": false,
+        "claim": "The printed values in Tables 2 and 3 imply that big has a lower training FLOP count per parameter than base, after dividing each Table 2 training cost by its corresponding Table 3 parameter count.",
+        "item1_type": "table",
+        "item1": "2",
+        "item1_path": "data/attention_is_all_you_need/table2.png",
+        "item2_type": "table",
+        "item2": "3",
+        "item2_path": "data/attention_is_all_you_need/table3.png",
+        "section": [
+            "6.1",
+            "6.2"
+        ],
+        "paper_path": "data/attention_is_all_you_need/paper.json",
+        "response": "Table 2 prints training costs for Transformer:\n\n- Base: \\(3.3 \\times 10^{18}\\) FLOPs  \n- Big: \\(2.3 \\times 10^{19}\\) FLOPs  \n\nTable 3 prints parameter counts:\n\n- Base: \\(65 \\times 10^6\\) parameters  \n- Big: \\(213 \\times 10^6\\) parameters  \n\nDividing training cost by parameter count:\n\n- Base: \\(\\frac{3.3 \\times 10^{18}}{65 \\times 10^6} \\approx 5.1 \\times 10^{10}\\) FLOPs/parameter  \n- Big: \\(\\frac{2.3 \\times 10^{19}}{213 \\times 10^6} \\approx 1.08 \\times 10^{11}\\) FLOPs/parameter  \n\nThe big model’s FLOPs per parameter is higher, not lower, than the base model’s.\n\nTherefore, the final answer is: Answer: no",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 2
+        }
+    },
+    {
+        "sample_id": "attention-analytical-1",
+        "claim_type": "analytical",
+        "label": true,
+        "claim": "Comparing just the polynomial factors in Table 1, ignoring hidden Big-O constants, n = 128 and d = 512 make the self-attention factor n squared times d equal to one quarter of the recurrent factor n times d squared. This is a comparison of the expressions, not measured wall-clock time.",
+        "type": "table",
+        "item": "1",
+        "section": [
+            "4"
+        ],
+        "image_path": "data/attention_is_all_you_need/table1.png",
+        "paper_path": "data/attention_is_all_you_need/paper.json",
+        "response": "Step-by-step evaluation:\n\n1. **What Table 1 states:**  \n   The table lists per-layer computational complexity as:\n   - Self-attention: \\(O(n^2 \\cdot d)\\)\n   - Recurrent: \\(O(n \\cdot d^2)\\)\n\n2. **Meaning of variables:**  \n   The caption defines:\n   - \\(n\\) as sequence length\n   - \\(d\\) as representation dimension\n\n3. **Substitute the claim’s values:**  \n   For \\(n = 128\\) and \\(d = 512\\):\n\n   Self-attention polynomial factor:\n   \\[\n   n^2 d = 128^2 \\cdot 512\n   \\]\n\n   Recurrent polynomial factor:\n   \\[\n   n d^2 = 128 \\cdot 512^2\n   \\]\n\n4. **Compare the two factors:**  \n   The ratio is:\n   \\[\n   \\frac{n^2 d}{n d^2} = \\frac{n}{d} = \\frac{128}{512} = \\frac{1}{4}\n   \\]\n\n5. **Check claim scope:**  \n   The claim explicitly says this compares only the polynomial factors from Table 1, ignores hidden Big-O constants, and is not a wall-clock timing claim. That matches what Table 1 provides.\n\nTherefore, the final answer is: Answer: yes",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 1
+        }
+    },
+    {
+        "sample_id": "attention-analytical-2",
+        "claim_type": "analytical",
+        "label": false,
+        "claim": "For fixed d, doubling n multiplies the self-attention polynomial factor in Table 1 by two and the recurrent polynomial factor by four.",
+        "type": "table",
+        "item": "1",
+        "section": [
+            "4"
+        ],
+        "image_path": "data/attention_is_all_you_need/table1.png",
+        "paper_path": "data/attention_is_all_you_need/paper.json",
+        "response": "Table 1 lists the per-layer complexity as:\n\n- Self-attention: \\(O(n^2 \\cdot d)\\)\n- Recurrent: \\(O(n \\cdot d^2)\\)\n\nFor fixed \\(d\\):\n\n1. Self-attention scales with \\(n^2\\). If \\(n\\) is doubled, \\((2n)^2 d = 4n^2d\\), so the polynomial factor increases by four, not two.\n2. Recurrent layers scale linearly with \\(n\\). If \\(n\\) is doubled, \\((2n)d^2 = 2nd^2\\), so the polynomial factor increases by two, not four.\n\nThe claim reverses the scaling behavior of self-attention and recurrent layers.\n\nTherefore, the final answer is: Answer: no",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 1
+        }
+    }
+]

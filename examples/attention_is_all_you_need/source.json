@@ -1,0 +1,54 @@
+{
+  "title": "Attention Is All You Need",
+  "arxiv_id": "1706.03762v7",
+  "url": "https://arxiv.org/pdf/1706.03762v7",
+  "pdf_sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+  "renderer": "pdftoppm version 26.02.0",
+  "dpi": 216,
+  "crops": {
+    "table1": {
+      "page": 6,
+      "box": [
+        100,
+        68,
+        522,
+        205
+      ]
+    },
+    "table2": {
+      "page": 8,
+      "box": [
+        100,
+        68,
+        522,
+        256
+      ]
+    },
+    "table3": {
+      "page": 9,
+      "box": [
+        100,
+        68,
+        522,
+        398
+      ]
+    },
+    "section6_1": {
+      "page": 8,
+      "box": [
+        100,
+        394,
+        522,
+        649
+      ]
+    }
+  },
+  "crop_sha256": {
+    "table1": "c9890a521b8327a712b9fd34870131697ef9c8d4fd3dc1bc275f88728105e37f",
+    "table2": "b93a611dc93bc7db52978890e3ac7442d6c265cd0415192622cdb01c6b9aabcc",
+    "table3": "0626233e5fb9f7df2711f6b317bb4735f662b8d49e1522bf883b6ace0ee3ecab",
+    "section6_1": "5b441eab1660fcee54f00746173bc1e93a88da943ac2ac509cb7654cc44f6432"
+  },
+  "labels": "Self-authored, source-checked demonstration; not official SciVer annotations",
+  "source_issue": "Table 2 prints EN-FR big BLEU 41.8, whereas Section 6.1 prose prints 41.0"
+}

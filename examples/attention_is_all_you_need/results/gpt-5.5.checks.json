@@ -1,0 +1,112 @@
+{
+  "paper": "1706.03762v7",
+  "model": "github-copilot/gpt-5.5",
+  "thinking": "high",
+  "system_prompt_sha256": "07206086321e51952d67e3e24df8d03333a4509097797bc4c6c0bf2ea892498d",
+  "n": 8,
+  "correct": 8,
+  "invalid": 0,
+  "examples": [
+    {
+      "sample_id": "attention-direct-1",
+      "claim_type": "direct",
+      "claim": "Table 2 reports a BLEU score of 28.4 for Transformer (big) on the English-to-German newstest2014 test.",
+      "expected": true,
+      "prediction": true,
+      "correct": true,
+      "prompt_sha256": "fac4611da324ef1002b2649390d16620ad5db69de454a076a1c50d3dde3e5158",
+      "image_sha256": [
+        "7d9a0c92fa2cab3d035ce3b9e6dfaa85ad1144587c181897d42d555780bd6c80"
+      ]
+    },
+    {
+      "sample_id": "attention-direct-2",
+      "claim_type": "direct",
+      "claim": "Table 3 lists N = 12 for the base Transformer configuration.",
+      "expected": false,
+      "prediction": false,
+      "correct": true,
+      "prompt_sha256": "b6fac1c216496d36d1e3cd6233a0eda78e920dc6081f8b42419af3e187c38b5e",
+      "image_sha256": [
+        "ac7d62600c4a7a2583f2a29dc6027414d39a35a14ea645b78232e9b9215a9c55"
+      ]
+    },
+    {
+      "sample_id": "attention-parallel-1",
+      "claim_type": "parallel",
+      "claim": "Table 1 lists O(n) sequential operations for recurrent layers, while Table 2 reports 27.3 English-to-German BLEU for Transformer (base model).",
+      "expected": true,
+      "prediction": true,
+      "correct": true,
+      "prompt_sha256": "efeeb966067c010509e00f5e2bd0862db8cdbe72e6d8622d67f1bbe49cf8deca",
+      "image_sha256": [
+        "fdab8d8305baa92d1004656155f76938ddaaa5befa0d5518f9c6f333b7467bac",
+        "7d9a0c92fa2cab3d035ce3b9e6dfaa85ad1144587c181897d42d555780bd6c80"
+      ]
+    },
+    {
+      "sample_id": "attention-parallel-2",
+      "claim_type": "parallel",
+      "claim": "Table 2 and the prose in Section 6.1 report the same numerical English-to-French BLEU score for the big Transformer model.",
+      "expected": false,
+      "prediction": false,
+      "correct": true,
+      "prompt_sha256": "29acdaf62c508b272df47c61ecf6c27286d0588bc7524b07f791b414971f8a36",
+      "image_sha256": [
+        "7d9a0c92fa2cab3d035ce3b9e6dfaa85ad1144587c181897d42d555780bd6c80",
+        "1fcaac39c021db5fa2a82b065203d2202ed8de8fb536095e680d39d81bb7144c"
+      ]
+    },
+    {
+      "sample_id": "attention-sequential-1",
+      "claim_type": "sequential",
+      "claim": "Using the base/big training-cost entries printed in Table 2 and their parameter counts in Table 3, dividing FLOPs by parameter count gives roughly 2.1 times as many training FLOPs per parameter for big as for base.",
+      "expected": true,
+      "prediction": true,
+      "correct": true,
+      "prompt_sha256": "039f392e05035715c9e5e17aacf5e5d88782988e17fe26bf75794b091a68b781",
+      "image_sha256": [
+        "7d9a0c92fa2cab3d035ce3b9e6dfaa85ad1144587c181897d42d555780bd6c80",
+        "ac7d62600c4a7a2583f2a29dc6027414d39a35a14ea645b78232e9b9215a9c55"
+      ]
+    },
+    {
+      "sample_id": "attention-sequential-2",
+      "claim_type": "sequential",
+      "claim": "The printed values in Tables 2 and 3 imply that big has a lower training FLOP count per parameter than base, after dividing each Table 2 training cost by its corresponding Table 3 parameter count.",
+      "expected": false,
+      "prediction": false,
+      "correct": true,
+      "prompt_sha256": "5e2b63fc825e3060a99ba5b58c31689d98f5c2ba8f8acfedbb9a9fdc4e3b5bfe",
+      "image_sha256": [
+        "7d9a0c92fa2cab3d035ce3b9e6dfaa85ad1144587c181897d42d555780bd6c80",
+        "ac7d62600c4a7a2583f2a29dc6027414d39a35a14ea645b78232e9b9215a9c55"
+      ]
+    },
+    {
+      "sample_id": "attention-analytical-1",
+      "claim_type": "analytical",
+      "claim": "Comparing just the polynomial factors in Table 1, ignoring hidden Big-O constants, n = 128 and d = 512 make the self-attention factor n squared times d equal to one quarter of the recurrent factor n times d squared. This is a comparison of the expressions, not measured wall-clock time.",
+      "expected": true,
+      "prediction": true,
+      "correct": true,
+      "prompt_sha256": "699fd239b1d2f1adac16daa411de9010618fe77290016e934673a34fdfcc0643",
+      "image_sha256": [
+        "fdab8d8305baa92d1004656155f76938ddaaa5befa0d5518f9c6f333b7467bac"
+      ]
+    },
+    {
+      "sample_id": "attention-analytical-2",
+      "claim_type": "analytical",
+      "claim": "For fixed d, doubling n multiplies the self-attention polynomial factor in Table 1 by two and the recurrent polynomial factor by four.",
+      "expected": false,
+      "prediction": false,
+      "correct": true,
+      "prompt_sha256": "f3f51b15647d3f935b9e70da13362f534d360a6451c1cf252c18aee205d6c5f1",
+      "image_sha256": [
+        "fdab8d8305baa92d1004656155f76938ddaaa5befa0d5518f9c6f333b7467bac"
+      ]
+    }
+  ],
+  "limitation": "Self-authored examples on a familiar paper, not official SciVer labels or a generalization benchmark"
+}

@@ -25,6 +25,8 @@ configuration. `--model pi/current` explicitly opts into the current Pi session
 model/reasoning instead. Other backends remain available through `--model`.
 
 - [Hello-world instructions and saved results](hello_world/README.md)
+- [Real article demo: Attention Is All You Need](examples/attention_is_all_you_need/README.md)
+  (`bash scripts/attention_pi.sh`; requires Poppler for PDF extraction/rendering)
 - [Mini-benchmark method and reproducible commands](benchmarks/README.md)
 - [GPT high-reasoning comparison](benchmarks/results/gpt_high/SUMMARY.md)
 
