@@ -32,8 +32,8 @@ def get_acc(examples):
             elif label==False and 'yes' not in item["response"].lower():
                 res[claim_type] += 1
                 res["total"] += 1
-    for k,v in res.items():
-        res[k] /= numbers[k]
+    for k, v in res.items():
+        res[k] = (v / numbers[k]) if numbers[k] else None
     print(len(examples))
     return res
 

@@ -1,0 +1,15 @@
+{
+  "sections": [
+    {
+      "section_id": "1.1",
+      "section_name": "Results",
+      "text": "Figure 1 shows that Model A reaches 90% accuracy on the toy dataset."
+    }
+  ],
+  "image_paths": {
+    "fig1": {
+      "caption": "Figure 1: A simple chart where Model A has 90% accuracy."
+    }
+  },
+  "tables": {}
+}

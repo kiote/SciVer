@@ -1,0 +1,15 @@
+[
+    {
+        "claim_type": "direct",
+        "label": false,
+        "claim": "Model A reaches 80% accuracy.",
+        "paper_path": "hello_world/paper.json",
+        "section": [
+            "1.1"
+        ],
+        "type": "chart",
+        "item": "fig1",
+        "image_path": "hello_world/fig1.png",
+        "response": "The claim says **Model A reaches 80% accuracy**.\n\nHowever, both the provided context and the caption say **Model A reaches 90% accuracy**:\n- Context: “Figure 1 shows that Model A reaches **90% accuracy** on the toy dataset.”\n- Caption: “Figure 1: A simple chart where Model A has **90% accuracy**.”\n\nSo the claim is directly contradicted by the available evidence. There is no support for 80%; instead, the caption supports 90%.\n\nTherefore, the final answer is: Answer: no"
+    }
+]

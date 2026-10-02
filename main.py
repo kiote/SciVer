@@ -4,8 +4,11 @@ import argparse
 import os
 import sys
 from utils.constant import COT_PROMPT
-from transformers.utils import logging
-logging.set_verbosity_error() 
+try:
+    from transformers.utils import logging
+    logging.set_verbosity_error()
+except ImportError:
+    logging = None
 
 def main(
     model_name: str, 
@@ -13,7 +16,9 @@ def main(
     queries: list, 
     output_path: str, 
     n: int=1)-> None:
-    if "gpt" in model_name:
+    if model_name.startswith("pi/"):
+        from model_inference.pi_rpc import generate_response
+    elif "gpt" in model_name:
         from model_inference.azure_gpt import generate_response
     elif "gemini" in model_name:
         from model_inference.openai_compatible import generate_response

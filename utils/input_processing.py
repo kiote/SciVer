@@ -7,7 +7,14 @@ from tqdm import tqdm
 import hashlib
 import base64
 import json
-from vllm.multimodal.utils import fetch_image
+try:
+    from vllm.multimodal.utils import fetch_image
+except ImportError:
+    def fetch_image(image_url):
+        if image_url.startswith("data:image") and "," in image_url:
+            _, b64 = image_url.split(",", 1)
+            return Image.open(BytesIO(base64.b64decode(b64))).convert("RGB")
+        return Image.open(image_url).convert("RGB")
 from PIL import Image
 from io import BytesIO
 
