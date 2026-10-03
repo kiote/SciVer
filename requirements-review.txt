@@ -1,0 +1,2 @@
+-r benchmarks/requirements.txt
+PyMuPDF==1.28.2

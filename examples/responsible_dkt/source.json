@@ -1,0 +1,51 @@
+{
+  "title": "Neural-Symbolic Knowledge Tracing: Injecting Educational Knowledge into Deep Learning for Responsible Learner Modelling",
+  "credit": "Danial Hooshyar et al. (2026)",
+  "arxiv_id": "2604.08263v1",
+  "submitted": "2026-04-09",
+  "status": "preprint",
+  "url": "https://arxiv.org/pdf/2604.08263v1",
+  "pdf_sha256": "5c3972aa216dbed2eeb7eb29c79be64c4ff5425bf2481aa85f32123c4fa16073",
+  "renderer": "pdftoppm version 26.02.0",
+  "dpi": 216,
+  "crops": {
+    "table4": {
+      "page": 18,
+      "box": [
+        70,
+        68,
+        542,
+        555
+      ]
+    },
+    "table5": {
+      "page": 19,
+      "box": [
+        70,
+        74,
+        542,
+        262
+      ]
+    },
+    "table6": {
+      "page": 19,
+      "box": [
+        70,
+        274,
+        542,
+        465
+      ]
+    }
+  },
+  "crop_sha256": {
+    "table4": "6c8302860125ab86be62d0d8bea16237a12c667ce64ec2ab923e12b7c037d2ec",
+    "table5": "f323781509cf6e92ae034c97eb304c2a4edad83a18c7ea61d32702eadc577c99",
+    "table6": "23675ed594d323d0c01e494a9baf295b9eeef153739c50e5eb1cca2117a00a26"
+  },
+  "context_sections": [
+    "3.4.1",
+    "4.2"
+  ],
+  "privacy": "Only aggregate tables and selected body text are sent. Author/contact lists, references, bibliographic citations and individual-student examples are excluded.",
+  "labels": "Self-authored and source-checked before inference; not official SciVer annotations"
+}

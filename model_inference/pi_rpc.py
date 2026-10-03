@@ -24,10 +24,11 @@ class PiRpcError(RuntimeError):
 
 
 class PiRpcClient:
-    def __init__(self, model: Optional[str] = None, thinking: Optional[str] = None):
+    def __init__(self, model: Optional[str] = None, thinking: Optional[str] = None,
+                 system_prompt: Optional[str] = None):
         cmd = ["pi", "--mode", "rpc", "--no-session", "--no-tools",
                "--no-extensions", "--no-skills", "--no-prompt-templates",
-               "--no-context-files", "--system-prompt", SYSTEM_PROMPT]
+               "--no-context-files", "--system-prompt", system_prompt or SYSTEM_PROMPT]
         self.model = model or DEFAULT_MODEL.removeprefix("pi/")
         self.thinking = thinking or DEFAULT_PI_THINKING
         cmd.extend(["--model", self.model, "--thinking", self.thinking])

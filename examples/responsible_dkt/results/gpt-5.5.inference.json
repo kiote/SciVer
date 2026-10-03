@@ -1,0 +1,182 @@
+[
+    {
+        "sample_id": "rdkt-direct-1",
+        "claim_type": "direct",
+        "label": true,
+        "claim": "In Table 4, Responsible-DKT with 10% training data and Full sequence length has AUC 0.88 and accuracy 0.85.",
+        "type": "table",
+        "item": "4",
+        "image_path": "data/responsible_dkt/table4.png",
+        "paper_path": "data/responsible_dkt/paper.json",
+        "section": [
+            "3.4.1",
+            "4.2"
+        ],
+        "response": "The claim refers to the Responsible-DKT row with training ratio 10% and sequence length “Full” in Table 4. In the table, that row lists AUC as 0.88 and Accuracy as 0.85. This directly matches the claim.\n\nTherefore, the final answer is: Answer: yes",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 1
+        }
+    },
+    {
+        "sample_id": "rdkt-direct-2",
+        "claim_type": "direct",
+        "label": false,
+        "claim": "Table 5 reports a late-stage prediction error of 11.98% for Classic-DKT at sequence length 50.",
+        "type": "table",
+        "item": "5",
+        "image_path": "data/responsible_dkt/table5.png",
+        "paper_path": "data/responsible_dkt/paper.json",
+        "section": [
+            "3.4.1",
+            "4.2"
+        ],
+        "response": "The claim is contradicted by Table 5. In the table, for **Classic-DKT** at **sequence length 50**, the **late-stage prediction error** is **10.48%**, not 11.98%. The value **11.98%** appears for **Responsible-DKT** at sequence length 50 in the late-stage column.\n\nTherefore, the final answer is: Answer: no",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 1
+        }
+    },
+    {
+        "sample_id": "rdkt-parallel-1",
+        "claim_type": "parallel",
+        "label": true,
+        "claim": "For Full sequences, Table 5 reports lower early-stage error for Responsible-DKT than Classic-DKT (14.35% versus 18.92%), and Table 6 also reports lower inconsistency for Responsible-DKT (0.36 versus 0.44).",
+        "item1_type": "table",
+        "item1": "5",
+        "item1_path": "data/responsible_dkt/table5.png",
+        "item2_type": "table",
+        "item2": "6",
+        "item2_path": "data/responsible_dkt/table6.png",
+        "paper_path": "data/responsible_dkt/paper.json",
+        "section": [
+            "3.4.1",
+            "4.2"
+        ],
+        "response": "Table 5 shows that for **Full** sequences, **Responsible-DKT** has an early-stage error of **14.35%**, while **Classic-DKT** has **18.92%**, so Responsible-DKT is lower.\n\nTable 6 shows that for **Full** sequences, **Responsible-DKT** has inconsistency **0.36**, while **Classic-DKT** has **0.44**, so Responsible-DKT is also lower on inconsistency.\n\nTherefore, the final answer is: Answer: yes",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 2
+        }
+    },
+    {
+        "sample_id": "rdkt-parallel-2",
+        "claim_type": "parallel",
+        "label": false,
+        "claim": "For Full sequences, Responsible-DKT has both a lower middle-stage error in Table 5 and lower volatility in Table 6 than BaseNS-DKT.",
+        "item1_type": "table",
+        "item1": "5",
+        "item1_path": "data/responsible_dkt/table5.png",
+        "item2_type": "table",
+        "item2": "6",
+        "item2_path": "data/responsible_dkt/table6.png",
+        "paper_path": "data/responsible_dkt/paper.json",
+        "section": [
+            "3.4.1",
+            "4.2"
+        ],
+        "response": "For Full sequences:\n\n1. **Table 5 middle-stage error**\n   - BaseNS-DKT: **16.12**\n   - Responsible-DKT: **15.28**\n   - Responsible-DKT is lower here.\n\n2. **Table 6 volatility**\n   - BaseNS-DKT: **0.11**\n   - Responsible-DKT: **0.17**\n   - Responsible-DKT is **higher**, not lower.\n\nThe claim is only partly correct: Responsible-DKT has lower middle-stage error, but it does **not** have lower volatility than BaseNS-DKT for Full sequences.\n\nTherefore, the final answer is: Answer: no",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 2
+        }
+    },
+    {
+        "sample_id": "rdkt-sequential-1",
+        "claim_type": "sequential",
+        "label": true,
+        "claim": "Using the printed Full-sequence values, replacing Classic-DKT with Responsible-DKT reduces early-stage error in Table 5 by about 24.2% relative to Classic-DKT, while reducing inconsistency in Table 6 by about 18.2% relative to Classic-DKT; the first relative reduction is larger.",
+        "item1_type": "table",
+        "item1": "5",
+        "item1_path": "data/responsible_dkt/table5.png",
+        "item2_type": "table",
+        "item2": "6",
+        "item2_path": "data/responsible_dkt/table6.png",
+        "paper_path": "data/responsible_dkt/paper.json",
+        "section": [
+            "3.4.1",
+            "4.2"
+        ],
+        "response": "Using the printed Full-sequence values:\n\n- Table 5 early-stage error:\n  - Classic-DKT = 18.92\n  - Responsible-DKT = 14.35\n  - Relative reduction = (18.92 − 14.35) / 18.92 ≈ 0.2415 = 24.2%\n\n- Table 6 inconsistency:\n  - Classic-DKT = 0.44\n  - Responsible-DKT = 0.36\n  - Relative reduction = (0.44 − 0.36) / 0.44 ≈ 0.1818 = 18.2%\n\nThe early-stage error reduction is indeed larger than the inconsistency reduction.\n\nTherefore, the final answer is: Answer: yes",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 2
+        }
+    },
+    {
+        "sample_id": "rdkt-sequential-2",
+        "claim_type": "sequential",
+        "label": false,
+        "claim": "Table 5 reports errors as percentages while Table 6 reports inconsistency as proportions. Converting Table 6's Full-sequence inconsistency values from 0.44 for Classic-DKT to 0.36 for Responsible-DKT into percentages gives a decrease of about 18.2 percentage points.",
+        "item1_type": "table",
+        "item1": "5",
+        "item1_path": "data/responsible_dkt/table5.png",
+        "item2_type": "table",
+        "item2": "6",
+        "item2_path": "data/responsible_dkt/table6.png",
+        "paper_path": "data/responsible_dkt/paper.json",
+        "section": [
+            "3.4.1",
+            "4.2"
+        ],
+        "response": "Table 5 is explicitly labeled as prediction error rates “(%)” and notes that all values are percentages, so that part is supported.\n\nTable 6 explicitly notes that volatility and inconsistency are proportions on a 0–1 scale, so the inconsistency values 0.44 and 0.36 correspond to 44% and 36%.\n\nHowever, the decrease from 44% to 36% is **8 percentage points**, not 18.2 percentage points. The 18.2 figure is the **relative percent decrease**: \\((0.44 - 0.36) / 0.44 \\approx 18.2\\%\\). The claim incorrectly calls this “percentage points.”\n\nTherefore, the final answer is: Answer: no",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 2
+        }
+    },
+    {
+        "sample_id": "rdkt-analytical-1",
+        "claim_type": "analytical",
+        "label": true,
+        "claim": "Table 6 provides a counterexample to equating the lowest volatility with the lowest inconsistency: for Full sequences, BaseNS-DKT has lower volatility than Responsible-DKT (0.11 versus 0.17) but higher inconsistency (0.44 versus 0.36).",
+        "type": "table",
+        "item": "6",
+        "image_path": "data/responsible_dkt/table6.png",
+        "paper_path": "data/responsible_dkt/paper.json",
+        "section": [
+            "3.4.1",
+            "4.2"
+        ],
+        "response": "I examine Table 6’s “Full” sequence rows:\n\n- **BaseNS-DKT (Full)**: Volatility = **0.11**, Inconsistency = **0.44**\n- **Responsible-DKT (Full)**: Volatility = **0.17**, Inconsistency = **0.36**\n- **Classic-DKT (Full)**: Volatility = **0.13**, Inconsistency = **0.44**\n\nBecause the metrics are proportions on a 0–1 scale, lower numerical values indicate lower volatility or inconsistency. For Full sequences, **BaseNS-DKT has the lowest volatility** among the models (0.11), but it does **not** have the lowest inconsistency; Responsible-DKT has lower inconsistency (0.36 vs. 0.44). This directly supports the claim that the table provides a counterexample to equating lowest volatility with lowest inconsistency.\n\nTherefore, the final answer is: Answer: yes",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 1
+        }
+    },
+    {
+        "sample_id": "rdkt-analytical-2",
+        "claim_type": "analytical",
+        "label": false,
+        "claim": "In every matching training-ratio and sequence-length setting printed in Table 4, Responsible-DKT has strictly higher accuracy than Classic-DKT.",
+        "type": "table",
+        "item": "4",
+        "image_path": "data/responsible_dkt/table4.png",
+        "paper_path": "data/responsible_dkt/paper.json",
+        "section": [
+            "3.4.1",
+            "4.2"
+        ],
+        "response": "I compared the Accuracy values for Responsible-DKT and Classic-DKT at each matching training ratio and sequence length in Table 4.\n\nKey comparisons:\n\n- Training ratio 10%, N=10: Responsible-DKT accuracy = 0.78, Classic-DKT accuracy = 0.84. Responsible-DKT is lower, not strictly higher.\n- Training ratio 50%, N=10: Responsible-DKT accuracy = 0.83, Classic-DKT accuracy = 0.83. They are equal, so Responsible-DKT is not strictly higher.\n- Most other matching settings show Responsible-DKT with higher accuracy, but the claim says “in every” setting and requires “strictly higher,” so even one lower or equal case disproves it.\n\nThe table therefore contradicts the claim.\n\nTherefore, the final answer is: Answer: no",
+        "inference": {
+            "provider": "github-copilot",
+            "model": "gpt-5.5",
+            "thinking": "high",
+            "image_count": 1
+        }
+    }
+]

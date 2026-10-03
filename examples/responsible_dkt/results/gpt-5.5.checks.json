@@ -1,0 +1,112 @@
+{
+  "paper": "2604.08263v1",
+  "model": "github-copilot/gpt-5.5",
+  "thinking": "high",
+  "system_prompt_sha256": "07206086321e51952d67e3e24df8d03333a4509097797bc4c6c0bf2ea892498d",
+  "n": 8,
+  "correct": 8,
+  "invalid": 0,
+  "examples": [
+    {
+      "sample_id": "rdkt-direct-1",
+      "claim_type": "direct",
+      "claim": "In Table 4, Responsible-DKT with 10% training data and Full sequence length has AUC 0.88 and accuracy 0.85.",
+      "expected": true,
+      "prediction": true,
+      "correct": true,
+      "prompt_sha256": "5139e1227166aedce84849342ec33a6084b4ccfac7f34a2773246f73a19e7899",
+      "image_sha256": [
+        "df7ae307631de135382b606673f56f98d92889741844925535f4b8b996fcfc62"
+      ]
+    },
+    {
+      "sample_id": "rdkt-direct-2",
+      "claim_type": "direct",
+      "claim": "Table 5 reports a late-stage prediction error of 11.98% for Classic-DKT at sequence length 50.",
+      "expected": false,
+      "prediction": false,
+      "correct": true,
+      "prompt_sha256": "e40e3c2c6a26d66129dc802292b4889929517b52c057e38cddc627010b80bb98",
+      "image_sha256": [
+        "2e717e43df8f2aaeead8cf0bb00bf3cb9877839a6df344fffd402eabe345f279"
+      ]
+    },
+    {
+      "sample_id": "rdkt-parallel-1",
+      "claim_type": "parallel",
+      "claim": "For Full sequences, Table 5 reports lower early-stage error for Responsible-DKT than Classic-DKT (14.35% versus 18.92%), and Table 6 also reports lower inconsistency for Responsible-DKT (0.36 versus 0.44).",
+      "expected": true,
+      "prediction": true,
+      "correct": true,
+      "prompt_sha256": "1aed975c3b06514f6f4bf7bf9b178dbda40de4b1a99d2ee380be5edc9f6c4535",
+      "image_sha256": [
+        "2e717e43df8f2aaeead8cf0bb00bf3cb9877839a6df344fffd402eabe345f279",
+        "79bbe21d1b9aa1128e49b5b243dbf5bd6c4768725c7a30ae25d479a640064dca"
+      ]
+    },
+    {
+      "sample_id": "rdkt-parallel-2",
+      "claim_type": "parallel",
+      "claim": "For Full sequences, Responsible-DKT has both a lower middle-stage error in Table 5 and lower volatility in Table 6 than BaseNS-DKT.",
+      "expected": false,
+      "prediction": false,
+      "correct": true,
+      "prompt_sha256": "1f78071754c0d49fb1d13cfb657927f4eaab6f2b7540a008fba054f22eee451d",
+      "image_sha256": [
+        "2e717e43df8f2aaeead8cf0bb00bf3cb9877839a6df344fffd402eabe345f279",
+        "79bbe21d1b9aa1128e49b5b243dbf5bd6c4768725c7a30ae25d479a640064dca"
+      ]
+    },
+    {
+      "sample_id": "rdkt-sequential-1",
+      "claim_type": "sequential",
+      "claim": "Using the printed Full-sequence values, replacing Classic-DKT with Responsible-DKT reduces early-stage error in Table 5 by about 24.2% relative to Classic-DKT, while reducing inconsistency in Table 6 by about 18.2% relative to Classic-DKT; the first relative reduction is larger.",
+      "expected": true,
+      "prediction": true,
+      "correct": true,
+      "prompt_sha256": "5dcbcc1d5ef4fb2ce6c3d9c159c084bdf088d8f38dd7539b9a2a645d75b6c337",
+      "image_sha256": [
+        "2e717e43df8f2aaeead8cf0bb00bf3cb9877839a6df344fffd402eabe345f279",
+        "79bbe21d1b9aa1128e49b5b243dbf5bd6c4768725c7a30ae25d479a640064dca"
+      ]
+    },
+    {
+      "sample_id": "rdkt-sequential-2",
+      "claim_type": "sequential",
+      "claim": "Table 5 reports errors as percentages while Table 6 reports inconsistency as proportions. Converting Table 6's Full-sequence inconsistency values from 0.44 for Classic-DKT to 0.36 for Responsible-DKT into percentages gives a decrease of about 18.2 percentage points.",
+      "expected": false,
+      "prediction": false,
+      "correct": true,
+      "prompt_sha256": "6d6c8afb6f6d7591efd084d4cc6cf17c404547479b9fcc12a777d29dcede26e3",
+      "image_sha256": [
+        "2e717e43df8f2aaeead8cf0bb00bf3cb9877839a6df344fffd402eabe345f279",
+        "79bbe21d1b9aa1128e49b5b243dbf5bd6c4768725c7a30ae25d479a640064dca"
+      ]
+    },
+    {
+      "sample_id": "rdkt-analytical-1",
+      "claim_type": "analytical",
+      "claim": "Table 6 provides a counterexample to equating the lowest volatility with the lowest inconsistency: for Full sequences, BaseNS-DKT has lower volatility than Responsible-DKT (0.11 versus 0.17) but higher inconsistency (0.44 versus 0.36).",
+      "expected": true,
+      "prediction": true,
+      "correct": true,
+      "prompt_sha256": "2979b42a12c4af990ffdb8116a52286409d57d285142296aa9f33a077a1bf957",
+      "image_sha256": [
+        "79bbe21d1b9aa1128e49b5b243dbf5bd6c4768725c7a30ae25d479a640064dca"
+      ]
+    },
+    {
+      "sample_id": "rdkt-analytical-2",
+      "claim_type": "analytical",
+      "claim": "In every matching training-ratio and sequence-length setting printed in Table 4, Responsible-DKT has strictly higher accuracy than Classic-DKT.",
+      "expected": false,
+      "prediction": false,
+      "correct": true,
+      "prompt_sha256": "05e3246fb061bceffbaa7c254454319828ab06c82cda86b87278db708d1b8484",
+      "image_sha256": [
+        "df7ae307631de135382b606673f56f98d92889741844925535f4b8b996fcfc62"
+      ]
+    }
+  ],
+  "limitation": "Self-authored source-grounded examples, not official SciVer labels or a generalization benchmark"
+}

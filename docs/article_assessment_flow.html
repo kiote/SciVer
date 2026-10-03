@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SciVer article assessment flow</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 24px; color: #1f2937; }
+    h1 { margin-bottom: 8px; }
+    p, li { max-width: 980px; line-height: 1.45; }
+    .note { background: #f8fafc; border: 1px solid #e5e7eb; padding: 12px 14px; border-radius: 10px; margin: 14px 0 18px; }
+    .mermaid { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background: white; }
+    code { background: #f3f4f6; padding: 1px 5px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>SciVer: high-level article assessment flow</h1>
+  <p>This diagram summarizes how this repository evaluates article-grounded claims. The core pipeline expects <strong>SciVer-style claim records</strong>; the Attention example shows how one real PDF is converted into those inputs.</p>
+
+  <div class="note">
+    Key files: <code>examples/attention_is_all_you_need/prepare.py</code>, <code>main.py</code>, <code>utils/input_processing.py</code>, <code>model_inference/*</code>, <code>acc_evaluation.py</code>, <code>examples/attention_is_all_you_need/report.py</code>
+  </div>
+
+  <pre class="mermaid">flowchart TD
+    A["Article source: PDF or prebuilt SciVer dataset"] --> B{"Input type"}
+
+    B -- "Real article demo" --> C["prepare.py: download PDF, extract text, crop visual evidence"]
+    C --> D["paper.json: sections and captions"]
+    C --> E["claims.json: claim records, labels, reasoning types, image paths"]
+
+    B -- "Already benchmark formatted" --> F["data_path JSON: SciVer-style claim records"]
+
+    D --> G["main.py loads queries"]
+    E --> G
+    F --> G
+
+    G --> H["Select prompt by reasoning type: direct, parallel, sequential, analytical"]
+    H --> I["utils/input_processing.py builds context, captions, and image attachments"]
+
+    I --> J{"Model backend"}
+    J --> J1["Pi RPC"]
+    J --> J2["Azure GPT"]
+    J --> J3["OpenAI-compatible Gemini"]
+    J --> J4["Ollama, vLLM, or Laya"]
+
+    J1 --> K["Model returns rationale plus final yes or no"]
+    J2 --> K
+    J3 --> K
+    J4 --> K
+
+    K --> L["outputs JSON: per-claim responses and metadata"]
+    L --> M["acc_evaluation.py parses final verdict and compares with gold label"]
+    M --> N["Accuracy by claim type and total accuracy"]
+
+    L --> O["Optional report.py validates article-demo claims"]
+    O --> P["SUMMARY, checks JSON, eval JSON"]
+
+    P --> Q["Interpretation: SciVer verifies specific claims using article text plus visual evidence"]
+  </pre>
+
+  <ul>
+    <li><strong>What is assessed?</strong> Individual claims about a paper are classified as supported or unsupported.</li>
+    <li><strong>Where multimodality enters:</strong> the model receives article text context plus one or two visual artifacts such as table crops or chart images.</li>
+    <li><strong>Article-specific preparation:</strong> <code>examples/attention_is_all_you_need/prepare.py</code> converts one pinned PDF into runnable SciVer inputs.</li>
+  </ul>
+
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+</body>
+</html>

@@ -24,9 +24,39 @@ mismatch is an error, not a silent fallback. Results record the selected
 configuration. `--model pi/current` explicitly opts into the current Pi session
 model/reasoning instead. Other backends remain available through `--model`.
 
+### Generic review for any paper (MVP)
+
+New paper reviews use a shared source-grounded workflow, not eight invented
+benchmark claims or a custom report per paper:
+
+```bash
+bash scripts/paper_review.sh ingest path/to/paper.pdf --id my-paper --title 'Paper title'
+bash scripts/paper_review.sh report my-paper --open
+# Inspect/redact prepared inputs before explicitly approving provider calls:
+bash scripts/paper_review.sh approve-inputs my-paper --pages all
+bash scripts/paper_review.sh run my-paper --max-calls 200
+bash scripts/paper_review.sh report my-paper --open
+```
+
+The system tracks page/source-unit coverage, uses two extraction passes, checks
+actual claims with evidence-linked statuses, and separates model candidates from
+reviewer-confirmed findings. Full runs execute every configured internal check;
+intentional subsets require `--partial`. Budget exhaustion or pending/failed
+checks return a non-success completion code rather than silently succeeding.
+Tasks and reports are cached/resumable. Incomplete runs are labelled partial;
+no unlabelled “paper accuracy score” is invented. Scanned-page OCR,
+external literature verification and experiment
+reproduction are not yet implemented.
+
+See [generic workflow, privacy gates and limitations](docs/paper_review_system.md)
+and [reader report language rules](docs/report_language.md).
+The earlier examples below remain demonstrations/regression tests, not full reviews.
+
 - [Hello-world instructions and saved results](hello_world/README.md)
 - [Real article demo: Attention Is All You Need](examples/attention_is_all_you_need/README.md)
   (`bash scripts/attention_pi.sh`; requires Poppler for PDF extraction/rendering)
+- [Recent-paper demo: Responsible-DKT](examples/responsible_dkt/README.md)
+  (`bash scripts/responsible_dkt_pi.sh`; [recent Hooshyar papers](examples/responsible_dkt/RECENT_PAPERS.md))
 - [Mini-benchmark method and reproducible commands](benchmarks/README.md)
 - [GPT high-reasoning comparison](benchmarks/results/gpt_high/SUMMARY.md)
 

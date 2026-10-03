@@ -1,0 +1,35 @@
+flowchart TD
+    A["Article source: PDF or prebuilt SciVer dataset"] --> B{"Input type"}
+
+    B -- "Real article demo" --> C["prepare.py: download PDF, extract text, crop visual evidence"]
+    C --> D["paper.json: sections and captions"]
+    C --> E["claims.json: claim records, labels, reasoning types, image paths"]
+
+    B -- "Already benchmark formatted" --> F["data_path JSON: SciVer-style claim records"]
+
+    D --> G["main.py loads queries"]
+    E --> G
+    F --> G
+
+    G --> H["Select prompt by reasoning type: direct, parallel, sequential, analytical"]
+    H --> I["utils/input_processing.py builds context, captions, and image attachments"]
+
+    I --> J{"Model backend"}
+    J --> J1["Pi RPC"]
+    J --> J2["Azure GPT"]
+    J --> J3["OpenAI-compatible Gemini"]
+    J --> J4["Ollama, vLLM, or Laya"]
+
+    J1 --> K["Model returns rationale plus final yes or no"]
+    J2 --> K
+    J3 --> K
+    J4 --> K
+
+    K --> L["outputs JSON: per-claim responses and metadata"]
+    L --> M["acc_evaluation.py parses final verdict and compares with gold label"]
+    M --> N["Accuracy by claim type and total accuracy"]
+
+    L --> O["Optional report.py validates article-demo claims"]
+    O --> P["SUMMARY, checks JSON, eval JSON"]
+
+    P --> Q["Interpretation: SciVer verifies specific claims using article text plus visual evidence"]
